@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:padding="9dp"
+    android:layout_margin="10dp"
+    android:background="@drawable/rounded_edges_background"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageViewCarProductImg"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        tools:background="@drawable/app_logo"
+        android:importantForAccessibility="no"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewCartProductName"
+        android:layout_width="140dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageViewCarProductImg"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Burger" />
+
+    <TextView
+        android:id="@+id/textViewCartProductPrice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_weight="1"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/imageViewCarProductImg"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCartProductName"
+        tools:text="22$" />
+
+
+    <ImageButton
+        android:id="@+id/buttonDeleteFromCart"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="18dp"
+        android:background="@drawable/delete_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textViewCartProductName"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

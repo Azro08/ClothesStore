@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_margin="15dp"
+    android:layout_width="wrap_content"
+    android:background="@drawable/rounded_edges_background"
+    android:padding="6dp"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageViewOrderProduct"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        tools:background = "@drawable/app_logo"
+        android:importantForAccessibility="no" />
+
+    <TextView
+        android:id="@+id/textViewOrderProductName"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        tools:text = "Burger"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end">
+
+        <TextView
+            android:id="@+id/textViewOrderProductPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="18sp"
+            tools:text="22$"/>
+
+        <ImageButton
+            android:id="@+id/buttonAddToCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/add_to_cart_icon"
+            android:visibility="gone"
+            android:importantForAccessibility="no"/>
+
+        <ImageButton
+            android:id="@+id/buttonDeleteProd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/delete_icon"
+            android:visibility="gone"
+            android:contentDescription="@string/delete" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

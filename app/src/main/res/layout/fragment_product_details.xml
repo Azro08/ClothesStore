@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    android:background="@color/gray"
+    tools:context=".ui.user.product_details.ProductDetailsFragment">
+
+    <ImageView
+        android:id="@+id/imageviewDetailsImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        tools:background="@drawable/app_logo"
+        android:importantForAccessibility="no" />
+
+    <TextView
+        android:id="@+id/textViewDetailsName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text = "Burger"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+
+        android:textSize="20sp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/textViewDetailsPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text = "Burger"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="9dp"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textViewDetailsDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:text = "Burger"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="9dp"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/buttonAddToCart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/purple"
+        android:text="@string/add_to_cart"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="9dp"
+        />
+
+    <Button
+        android:id="@+id/buttonEditProd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/purple"
+        android:text="@string/edit_product"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="9dp"
+        android:visibility="gone"/>
+
+
+
+</LinearLayout>

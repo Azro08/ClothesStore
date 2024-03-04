@@ -1,0 +1,44 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">ClothesStore</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome">Welcome</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="home">Home</string>
+    <string name="cart">Cart</string>
+    <string name="history">History</string>
+    <string name="profile">Profile</string>
+    <string name="search">search</string>
+    <string name="enjoy_shopping">Enjoy shopping :)</string>
+    <string name="re_password">Re-Password</string>
+    <string name="signup">signup</string>
+    <string name="logout">Logout</string>
+    <string name="add_to_cart">ADD To Cart</string>
+    <string name="pay">PAY</string>
+    <string name="order">Order</string>
+    <string name="details">Details:</string>
+    <string name="date">Date:</string>
+    <string name="cvv">cvv</string>
+    <string name="expiry_date">expiry date</string>
+    <string name="finish">Finish</string>
+    <string name="card_number">card number</string>
+    <string name="credit_card">credit card</string>
+    <string name="cash">cash</string>
+    <string name="total_price">Total price</string>
+    <string name="address">address</string>
+    <string name="phone_num">Phone num</string>
+    <string name="comment">Comment</string>
+    <string name="order_history">Order history</string>
+    <string name="products_not_found" tools:ignore="ExtraTranslation">No products found</string>
+    <string name="add_category">Add category</string>
+    <string name="add_product">Add product</string>
+    <string name="product_name">Product Name</string>
+    <string name="category">Category</string>
+    <string name="price">Price</string>
+    <string name="description">Description</string>
+    <string name="save_product">Save product</string>
+    <string name="edit_product">Edit product</string>
+    <string name="delete">delete</string>
+</resources>
