@@ -5,51 +5,72 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/dark_gray"
     tools:context=".ui.admin.products.add_product.AddProductFragment">
 
     <ImageView
         android:id="@+id/imageViewAddProdImage"
-        android:layout_width="220dp"
-        android:layout_height="220dp"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
         android:background="@drawable/add_icon"
         android:layout_gravity="center"
         android:layout_marginBottom="10dp"
         android:importantForAccessibility="no" />
 
-    <EditText
-        android:id="@+id/editTextName"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/product_name"
-        android:inputType="text"
-        android:importantForAutofill="no" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:padding="6dp"
+        android:background="@drawable/rounded_edges_background">
 
-    <Spinner
-        android:id="@+id/spinnerCategory"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:layout_marginBottom="6dp"/>
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/product_name"
+            android:textColor="@color/fluorescent_yellow"
+            android:textColorHint="@color/light_yellow"
+            android:inputType="text"
+            android:importantForAutofill="no" />
 
-    <EditText
-        android:id="@+id/editTextDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/description"
-        android:inputType="text"
-        android:importantForAutofill="no" />
+        <Spinner
+            android:id="@+id/spinnerCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:backgroundTint="@color/fluorescent_yellow"
+            android:layout_marginBottom="6dp"/>
 
-    <EditText
-        android:id="@+id/editTextPrice"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/price"
-        android:inputType="numberDecimal"
-        android:importantForAutofill="no" />
+        <EditText
+            android:id="@+id/editTextDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/description"
+            android:textColor="@color/fluorescent_yellow"
+            android:textColorHint="@color/fluorescent_yellow"
+            android:inputType="text"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/editTextPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/price"
+            android:textColor="@color/fluorescent_yellow"
+            android:textColorHint="@color/fluorescent_yellow"
+            android:inputType="numberDecimal"
+            android:importantForAutofill="no" />
+
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/buttonSaveProduct"
         android:layout_width="match_parent"
+        android:textColor="@color/black"
         android:layout_height="wrap_content"
         android:text="@string/save_product" />
 

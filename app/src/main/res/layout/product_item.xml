@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:textColor="@color/black"
+        android:textColor="@color/fluorescent_yellow"
         android:textSize="20sp"
         tools:text = "Burger"/>
 
@@ -36,6 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textSize="18sp"
+            android:textColor="@color/green"
             tools:text="22$"/>
 
         <ImageButton

@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/dark_gray"
     tools:context=".ui.auth.AuthActivity">
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -13,8 +13,6 @@
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:layout_margin="15dp"
-        app:civ_border_color="#FF000000"
-        app:civ_border_width="2dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:src="@drawable/app_logo" />
@@ -25,7 +23,7 @@
         android:layout_marginTop="52dp"
         android:fontFamily="cursive"
         android:text="@string/welcome"
-        android:textColor="@color/purple"
+        android:textColor="@color/fluorescent_yellow"
         android:textSize="54sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,11 +40,11 @@
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"
             android:layout_width="match_parent"
-            app:tabTextColor="@color/purple"
+            app:tabTextColor="@color/fluorescent_yellow"
             app:tabMode="fixed"
             app:tabGravity="fill"
-            android:background="@color/white"
-            app:tabSelectedTextColor="@color/black"
+            android:background="@color/dark_gray"
+            app:tabSelectedTextColor="@color/fluorescent_yellow"
             android:layout_height="wrap_content" />
 
         <androidx.viewpager2.widget.ViewPager2

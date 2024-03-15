@@ -3,7 +3,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:padding="5dp"
-    android:background="@color/gray"
+    android:background="@color/dark_gray"
     android:layout_margin="15dp"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
@@ -26,6 +26,6 @@
         android:layout_height="wrap_content"
         tools:text = "Chicken"
         android:layout_gravity="center"
-        android:textColor="@color/black"
+        android:textColor="@color/fluorescent_yellow"
         android:textSize="22sp"/>
 </LinearLayout>

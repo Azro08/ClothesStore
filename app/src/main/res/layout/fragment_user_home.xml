@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray"
+    android:background="@color/dark_gray"
     android:orientation="vertical"
     android:padding="10dp"
     tools:context=".ui.shared.home.UserHomeFragment">
@@ -15,7 +15,7 @@
         android:layout_margin="8dp"
         android:fontFamily="cursive"
         android:text="@string/enjoy_shopping"
-        android:textColor="@color/purple"
+        android:textColor="@color/fluorescent_yellow"
         android:textSize="28sp" />
 
     <LinearLayout

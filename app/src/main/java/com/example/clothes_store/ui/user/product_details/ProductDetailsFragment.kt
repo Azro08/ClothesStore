@@ -2,6 +2,7 @@ package com.example.clothes_store.ui.user.product_details
 
 import android.app.AlertDialog
 import android.app.Dialog
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -88,8 +89,9 @@ class ProductDetailsFragment : DialogFragment() {
 
     private fun displayDetails(product: Product) = with(binding) {
         Log.d("photoLink", product.image)
+        val imageUrl = Constants.BASE_IMAGE_URL + product.image
         Glide.with(binding.root)
-            .load(product.image)
+            .load(Uri.parse(imageUrl))
             .error(R.drawable.app_logo)
             .into(binding.imageviewDetailsImage)
         textViewDetailsName.text = product.name

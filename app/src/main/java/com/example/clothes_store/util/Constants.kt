@@ -16,6 +16,7 @@ object Constants {
     const val AUTH_TOKEN_KEY = "auth_token_key"
 
     const val BASE_URL = "http://192.168.100.38:8088/api/"
+    const val BASE_IMAGE_URL = BASE_URL+"products/images/"
 
     fun generateRandomId(): String {
         val characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"

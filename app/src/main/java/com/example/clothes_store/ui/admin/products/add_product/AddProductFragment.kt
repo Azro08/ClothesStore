@@ -3,6 +3,7 @@ package com.example.clothes_store.ui.admin.products.add_product
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -24,6 +25,7 @@ import com.example.clothes_store.util.Constants
 import com.ivkorshak.el_diaries.util.ScreenState
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import java.io.File
 
 @AndroidEntryPoint
 class AddProductFragment : Fragment() {
@@ -43,8 +45,7 @@ class AddProductFragment : Fragment() {
         pickMedia = registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
             if (uri != null) {
                 Log.d("PhotoPicker", "Selected URI: $uri")
-                Glide.with(binding.root).load(uri)
-                    .error(R.drawable.add_img_icon)
+                Glide.with(binding.root).load(uri).error(R.drawable.add_img_icon)
                     .into(binding.imageViewAddProdImage)
                 imageUri = uri
             } else {
@@ -54,8 +55,7 @@ class AddProductFragment : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         _binding = FragmentAddProductBinding.inflate(layoutInflater)
         return binding.root
@@ -69,9 +69,7 @@ class AddProductFragment : Fragment() {
         }
         binding.buttonSaveProduct.setOnClickListener {
             if (!areAllFieldsFilled()) Toast.makeText(
-                context,
-                "Please fill all fields",
-                Toast.LENGTH_SHORT
+                context, "Please fill all fields", Toast.LENGTH_SHORT
             ).show()
             else saveProduct()
         }
@@ -81,17 +79,13 @@ class AddProductFragment : Fragment() {
     }
 
     private fun getProductsCategories() {
-        Log.d("AddProductFragment", "getProductsCategories")
         lifecycleScope.launch {
             viewModel.categoryList.collect { state ->
                 when (state) {
                     is ScreenState.Loading -> {}
-                    is ScreenState.Error -> {
-                        Log.d("AddProductFragment", "error: ${state.message}")
-                    }
+                    is ScreenState.Error -> {}
 
                     is ScreenState.Success -> {
-                        Log.d("AddProductFragment", "success: ${state.data}")
                         displayCategories(state.data!!.toCategoryStringList())
                     }
                 }
@@ -100,13 +94,23 @@ class AddProductFragment : Fragment() {
     }
 
     private fun displayCategories(categoryList: List<String>) {
-        Log.d("AddProductFragment", "displayCategories: $categoryList")
         val categoryAdapter = ArrayAdapter(
             requireContext(),
             androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,
             categoryList
         )
         binding.spinnerCategory.adapter = categoryAdapter
+    }
+
+    private fun getFilePathFromUri(uri: Uri): String? {
+        val contentResolver = requireActivity().contentResolver
+        val projection = arrayOf(MediaStore.Images.Media.DATA)
+        val cursor = contentResolver.query(uri, projection, null, null, null)
+        return cursor?.use {
+            val columnIndex = it.getColumnIndexOrThrow(MediaStore.Images.Media.DATA)
+            it.moveToFirst()
+            it.getString(columnIndex)
+        }
     }
 
     private fun getDetails(id: Int) {
@@ -117,9 +121,7 @@ class AddProductFragment : Fragment() {
                     when (state) {
                         is ScreenState.Loading -> {}
                         is ScreenState.Error -> Toast.makeText(
-                            context,
-                            state.message ?: "Failed",
-                            Toast.LENGTH_SHORT
+                            context, state.message ?: "Failed", Toast.LENGTH_SHORT
                         ).show()
 
                         is ScreenState.Success -> {
@@ -135,11 +137,12 @@ class AddProductFragment : Fragment() {
     }
 
     private fun displayDetails(product: Product) {
+        val imageUrl = Constants.BASE_IMAGE_URL + product.image
         imageUri = Uri.parse(product.image)
         binding.editTextName.setText(product.name)
         binding.editTextDescription.setText(product.description)
         binding.editTextPrice.setText(product.price.toString())
-        Glide.with(binding.root).load(imageUri).error(R.drawable.app_logo)
+        Glide.with(binding.root).load(Uri.parse(imageUrl)).error(R.drawable.app_logo)
             .into(binding.imageViewAddProdImage)
     }
 
@@ -153,23 +156,22 @@ class AddProductFragment : Fragment() {
         val productCategory = binding.spinnerCategory.selectedItem.toString()
         val productDescription = binding.editTextDescription.text.toString()
         val productPrice = binding.editTextPrice.text.toString().toDouble()
-        val imageFile = imageUri.toString()
-        Log.d("imageFIleUri", imageUri.toString())
+        val filePath = getFilePathFromUri(imageUri)
+        val file = File(filePath!!)
+        Log.d("AddProductFragment", "File path: $filePath")
         val newProduct = Product(
             name = productName,
             category = productCategory,
             description = productDescription,
             price = productPrice,
-            image = imageFile
         )
 
         if (productId != null) {
             updateProd(newProduct)
-        } else createNewProd(newProduct, imageFile)
+        } else createNewProd(newProduct, file)
     }
 
     private fun updateProd(newProduct: Product) {
-        Log.d("AddProductFragment", "updateProd: ")
         lifecycleScope.launch {
             val imageFile = imageUri.toString()
             viewModel.updateProduct(productId!!, newProduct, imageFile)
@@ -182,7 +184,6 @@ class AddProductFragment : Fragment() {
                     is ScreenState.Error -> {
                         binding.buttonSaveProduct.visibility = View.VISIBLE
                         Toast.makeText(context, state.message, Toast.LENGTH_SHORT).show()
-                        Log.d("AddProductFragment", state.message.toString())
                     }
 
                     is ScreenState.Success -> {
@@ -195,8 +196,7 @@ class AddProductFragment : Fragment() {
         }
     }
 
-    private fun createNewProd(newProduct: Product, imageFile: String) {
-        Log.d("AddProductFragment", "createNewProd: ")
+    private fun createNewProd(newProduct: Product, imageFile: File) {
         lifecycleScope.launch {
             viewModel.addProduct(newProduct, imageFile)
             viewModel.addProductState.collect { state ->
@@ -209,7 +209,6 @@ class AddProductFragment : Fragment() {
                         binding.buttonSaveProduct.visibility = View.VISIBLE
                         Toast.makeText(context, state.message ?: "Failed", Toast.LENGTH_SHORT)
                             .show()
-                        Log.d("AddProductFragment", state.message.toString())
                     }
 
                     is ScreenState.Success -> {
@@ -222,28 +221,13 @@ class AddProductFragment : Fragment() {
         }
     }
 
-//    private fun getRealPathFromURI(uri: Uri): String {
-//        val cursor: Cursor? = requireActivity().contentResolver.query(uri, null, null, null, null)
-//        return if (cursor == null) { // Source is Dropbox or other similar local file path
-//            uri.path.toString()
-//        } else {
-//            cursor.moveToFirst()
-//            val idx: Int = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA)
-//            val path: String = cursor.getString(idx)
-//            cursor.close()
-//            path
-//        }
-//    }
-
-
     private fun areAllFieldsFilled(): Boolean {
         val productName = binding.editTextName.text.toString()
         val productCategory = binding.spinnerCategory.selectedItem.toString()
         val productDescription = binding.editTextDescription.text.toString()
         val productPrice = binding.editTextPrice.text.toString()
 
-        return productName.isNotEmpty() && productCategory.isNotEmpty() &&
-                productDescription.isNotEmpty() && productPrice.isNotEmpty() && imageUri.toString()
+        return productName.isNotEmpty() && productCategory.isNotEmpty() && productDescription.isNotEmpty() && productPrice.isNotEmpty() && imageUri.toString()
             .isNotEmpty()
     }
 

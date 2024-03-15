@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:background="@color/gray"
+    android:background="@color/dark_gray"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,7 +11,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/purple"
+        android:textColor="@color/fluorescent_yellow"
         android:textSize="28sp"
         android:textStyle="bold"
         android:text="@string/order_history"
@@ -36,6 +36,7 @@
         android:layout_weight="1"
         android:gravity="center"
         android:textSize="28sp"
+        android:textColor="@color/fluorescent_yellow"
         android:fontFamily="cursive"
         android:visibility="gone"/>
 

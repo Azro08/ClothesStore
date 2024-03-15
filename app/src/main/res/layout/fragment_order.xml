@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray"
+    android:background="@color/dark_gray"
     android:padding="10dp"
     tools:context=".ui.user.order.OrderFragment">
 
@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/order"
-            android:textColor="@color/purple"
+            android:textColor="@color/fluorescent_yellow"
             android:textStyle="bold"
             android:fontFamily="cursive"
             android:textSize="28sp"
@@ -28,12 +28,13 @@
             android:layout_height="wrap_content"
             android:text="@string/details"
             android:textSize="20sp"
-            android:textColor="@color/black"/>
+            android:textColor="@color/fluorescent_yellow"/>
 
         <TextView
             android:id="@+id/textViewOrderDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/light_yellow"
             android:textSize="18sp"/>
 
         <TextView
@@ -41,18 +42,21 @@
             android:layout_height="wrap_content"
             android:text="@string/date"
             android:textSize="20sp"
-            android:textColor="@color/black"/>
+            android:textColor="@color/fluorescent_yellow"/>
 
         <TextView
             android:id="@+id/textViewOrderDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/light_yellow"
             android:textSize="18sp"/>
 
         <EditText
             android:id="@+id/editTextOrderAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColorHint="@color/light_yellow"
+            android:textColor="@color/fluorescent_yellow"
             android:hint="@string/address"
             android:inputType="text"/>
 
@@ -60,6 +64,8 @@
             android:id="@+id/editTextOrderPhoneNum"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColorHint="@color/light_yellow"
+            android:textColor="@color/fluorescent_yellow"
             android:hint="@string/phone_num"
             android:inputType="phone"/>
 
@@ -72,13 +78,13 @@
             <RadioButton
                 android:id="@+id/radioButtonCash"
                 android:layout_width="wrap_content"
-                android:textColor="@color/black"
+                android:textColor="@color/fluorescent_yellow"
                 android:layout_height="wrap_content"
                 android:text="@string/cash" />
 
             <RadioButton
                 android:id="@+id/radioButtonCreditCard"
-                android:textColor="@color/black"
+                android:textColor="@color/fluorescent_yellow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/credit_card" />
@@ -99,6 +105,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/card_number"
+                android:textColorHint="@color/light_yellow"
+                android:textColor="@color/fluorescent_yellow"
                 android:importantForAutofill="no"
                 android:inputType="number" />
 
@@ -108,6 +116,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/expiry_date"
+                android:textColorHint="@color/light_yellow"
+                android:textColor="@color/fluorescent_yellow"
                 android:importantForAutofill="no"
                 android:inputType="date" />
 
@@ -117,6 +127,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/cvv"
+                android:textColorHint="@color/light_yellow"
+                android:textColor="@color/fluorescent_yellow"
                 android:importantForAutofill="no"
                 android:inputType="number" />
 
@@ -127,18 +139,21 @@
             android:layout_height="wrap_content"
             android:text="@string/total_price"
             android:textSize="20sp"
-            android:textColor="@color/black"/>
+            android:textColor="@color/fluorescent_yellow"/>
 
         <TextView
             android:id="@+id/textViewOrderTotalPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColorHint="@color/light_yellow"
             android:textSize="18sp"/>
 
         <EditText
             android:id="@+id/editTextOrderComment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColorHint="@color/light_yellow"
+            android:textColor="@color/fluorescent_yellow"
             android:hint="@string/comment"/>
 
         <Button
@@ -146,7 +161,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:backgroundTint="@color/purple"
+            android:textColor="@color/black"
             android:text="@string/finish"/>
 
     </LinearLayout>

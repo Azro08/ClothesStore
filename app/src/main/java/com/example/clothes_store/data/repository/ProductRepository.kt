@@ -7,8 +7,10 @@ import com.example.clothes_store.data.model.Product
 import com.example.clothes_store.util.AuthManager
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
+import okhttp3.RequestBody.Companion.asRequestBody
 import okhttp3.RequestBody.Companion.toRequestBody
 import retrofit2.Response
+import java.io.File
 import javax.inject.Inject
 
 class ProductRepository @Inject constructor(
@@ -26,7 +28,7 @@ class ProductRepository @Inject constructor(
     }
 
     @SuppressLint("Recycle")
-    suspend fun addProduct(product: Product, imageFile: String): Response<String> {
+    suspend fun addProduct(product: Product, imageFile: File): Response<String> {
 
         val nameRequestBody = product.name.toRequestBody("text/plain".toMediaTypeOrNull())
         val priceRequestBody =
@@ -35,12 +37,12 @@ class ProductRepository @Inject constructor(
             product.description.toRequestBody("text/plain".toMediaTypeOrNull())
         val categoryRequestBody = product.category.toRequestBody("text/plain".toMediaTypeOrNull())
 
-        Log.d("imageFile", imageFile)
+        Log.d("imageFile", imageFile.toString())
 
         val imageFilePart = MultipartBody.Part.createFormData(
             "imageFile",
-            imageFile,
-            imageFile.toRequestBody("image/*".toMediaTypeOrNull())
+            imageFile.name,
+            imageFile.asRequestBody("multipart/form-data".toMediaTypeOrNull())
         )
 
         Log.d("imageFilePart", imageFilePart.toString())

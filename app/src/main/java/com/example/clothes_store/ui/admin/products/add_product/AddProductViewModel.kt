@@ -81,7 +81,7 @@ class AddProductViewModel @Inject constructor(
         }
     }
 
-    fun addProduct(product: Product, imageFile: String) = viewModelScope.launch {
+    fun addProduct(product: Product, imageFile: File) = viewModelScope.launch {
 
         try {
             productRepository.addProduct(product, imageFile).let {

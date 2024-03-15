@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:background="@color/gray"
+    android:background="@color/dark_gray"
     android:orientation="vertical"
     tools:context=".ui.user.profile.ProfileFragment">
 
@@ -19,7 +19,7 @@
         android:text="@string/logout"
         android:layout_gravity="center"
         android:layout_margin="15dp"
-        android:backgroundTint="@color/purple"
+        android:textColor="@color/black"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

@@ -42,9 +42,10 @@ class ProductsRvAdapter(
             val priceString = String.format("%.2f", curProduct.price)
             val priceTag = "$priceString$"
             binding.textViewOrderProductPrice.text = priceTag
-            Log.d("imageFIle", curProduct.image)
+            val imageUrl = Constants.BASE_IMAGE_URL + curProduct.image
+            Log.d("imageUrl", imageUrl)
             Glide.with(binding.root)
-                .load(curProduct.image)
+                .load(Uri.parse(imageUrl))
                 .error(R.drawable.app_logo)
                 .into(binding.imageViewOrderProduct)
             product = curProduct

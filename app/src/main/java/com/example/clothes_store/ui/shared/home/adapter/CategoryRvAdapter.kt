@@ -35,13 +35,13 @@ class CategoryRvAdapter(
                 binding.root.setBackgroundColor(
                     ContextCompat.getColor(
                         binding.root.context,
-                        R.color.purple
+                        R.color.dark_gray2
                     )
                 )
                 binding.textViewProductCategory.setTextColor(
                     ContextCompat.getColor(
                         binding.root.context,
-                        R.color.white
+                        R.color.fluorescent_yellow
                     )
                 )
             } else {
@@ -49,13 +49,13 @@ class CategoryRvAdapter(
                 binding.root.setBackgroundColor(
                     ContextCompat.getColor(
                         binding.root.context,
-                        R.color.gray
+                        R.color.dark_gray
                     )
                 )
                 binding.textViewProductCategory.setTextColor(
                     ContextCompat.getColor(
                         binding.root.context,
-                        R.color.black
+                        R.color.fluorescent_yellow
                     )
                 )
             }

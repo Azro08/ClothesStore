@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp"
-    android:background="@color/gray"
+    android:background="@color/dark_gray"
     tools:context=".ui.user.product_details.ProductDetailsFragment">
 
     <ImageView
@@ -16,43 +16,55 @@
         tools:background="@drawable/app_logo"
         android:importantForAccessibility="no" />
 
-    <TextView
-        android:id="@+id/textViewDetailsName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text = "Burger"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-
-        android:textSize="20sp"
-        android:textColor="@color/black"/>
-
-    <TextView
-        android:id="@+id/textViewDetailsPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text = "Burger"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginTop="9dp"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/textViewDetailsDescription"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        tools:text = "Burger"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginTop="9dp"
-        android:textSize="20sp" />
+        android:orientation="vertical"
+        android:padding="6dp"
+        android:layout_margin="10dp"
+        android:background ="@drawable/rounded_edges_background">
+
+        <TextView
+            android:id="@+id/textViewDetailsName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text = "Burger"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:textSize="20sp"
+            android:textColor="@color/fluorescent_yellow"/>
+
+        <TextView
+            android:id="@+id/textViewDetailsPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text = "Burger"
+            android:textColor="@color/light_yellow"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="9dp"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textViewDetailsDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text = "Burger"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="9dp"
+            android:textColor="@color/light_yellow"
+            android:textSize="20sp" />
+
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/buttonAddToCart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/purple"
+        android:textColor="@color/black"
         android:text="@string/add_to_cart"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
@@ -63,7 +75,7 @@
         android:id="@+id/buttonEditProd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/purple"
+        android:textColor="@color/black"
         android:text="@string/edit_product"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"

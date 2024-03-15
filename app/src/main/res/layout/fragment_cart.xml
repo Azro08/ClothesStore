@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray"
+    android:background="@color/dark_gray"
     tools:context=".ui.user.cart.CartFragment">
 
     <TextView
@@ -16,7 +16,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="cursive"
         android:text="@string/cart"
-        android:textColor="@color/purple"
+        android:textColor="@color/fluorescent_yellow"
         android:textSize="28sp"
         android:textStyle="bold" />
 
@@ -53,7 +53,7 @@
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:backgroundTint="@color/purple"
+        android:backgroundTint="@color/fluorescent_yellow"
         android:text="@string/pay"
         android:layout_gravity="center"/>
 

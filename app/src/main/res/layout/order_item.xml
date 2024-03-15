@@ -11,13 +11,14 @@
         android:id="@+id/textViwOrderItemDetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
+        android:textColor="@color/fluorescent_yellow"
         android:textSize="20sp" />
 
     <TextView
         android:id="@+id/textViwOrderItemPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/fluorescent_yellow"
         android:layout_marginTop="6dp"
         android:textSize="20sp"/>
 
@@ -25,6 +26,7 @@
         android:id="@+id/textViwOrderItemDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/fluorescent_yellow"
         android:layout_marginTop="6dp"
         android:textSize="20sp"/>
 

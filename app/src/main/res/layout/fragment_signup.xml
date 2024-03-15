@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/dark_gray"
     android:gravity="center"
     tools:context=".ui.auth.signup.SignupFragment">
 
@@ -13,12 +14,14 @@
         android:layout_width="match_parent"
         android:layout_margin="20dp"
         android:layout_height="wrap_content"
+        app:hintTextColor="@color/light_yellow"
         android:hint="@string/email">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/fluorescent_yellow"
             android:inputType="textEmailAddress" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -27,12 +30,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
+        app:hintTextColor="@color/light_yellow"
         android:hint="@string/password">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/fluorescent_yellow"
             android:inputType="textPassword" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -41,12 +46,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
+        app:hintTextColor="@color/light_yellow"
         android:hint="@string/re_password">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextRePassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/fluorescent_yellow"
             android:inputType="textPassword" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -55,8 +62,7 @@
         android:id="@+id/buttonSignup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/purple"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:layout_margin="20dp"
         android:text="@string/signup"/>
 

@@ -16,6 +16,7 @@ import com.example.clothes_store.databinding.FragmentLoginBinding
 import com.example.clothes_store.ui.admin.AdminActivity
 import com.example.clothes_store.util.AuthManager
 import com.example.clothes_store.util.Constants
+import com.ivkorshak.el_diaries.util.ScreenState
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -25,6 +26,7 @@ class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
     private val viewModel: LoginViewModel by viewModels()
+
     @Inject
     lateinit var authManager: AuthManager
     override fun onCreateView(
@@ -51,12 +53,19 @@ class LoginFragment : Fragment() {
             val email = binding.editTextEmail.text.toString()
             val password = binding.editTextPassword.text.toString()
             viewModel.login(email, password)
-            viewModel.loggedIn.collect { user ->
-                Log.d("Login", user.toString())
-                if (user != null) {
-                    getAuthToken(user)
-                } else {
-                    binding.buttonLogin.isClickable = true
+            viewModel.loggedIn.collect { state ->
+                when (state) {
+
+                    is ScreenState.Loading -> {}
+                    is ScreenState.Error -> {
+                        binding.buttonLogin.isClickable = true
+                        Toast.makeText(requireContext(), state.message, Toast.LENGTH_SHORT).show()
+                    }
+
+                    is ScreenState.Success -> {
+                        getAuthToken(state.data!!)
+                    }
+
                 }
             }
         }

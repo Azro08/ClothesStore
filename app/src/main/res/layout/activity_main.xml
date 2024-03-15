@@ -22,7 +22,7 @@
         android:layout_height="70dp"
         app:itemIconTint="@drawable/bottom_nav_item_color"
         app:itemTextColor="@color/white"
-        android:background="@color/purple"
+        android:background="@color/black"
         app:menu="@menu/users_bottom_navbar_items" />
 
 </LinearLayout>
