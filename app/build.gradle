@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.clothes_store'
+    namespace 'com.example.sport_store'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.example.clothes_store"
+        applicationId "com.example.sport_store"
         minSdk 27
         targetSdk 34
         versionCode 1

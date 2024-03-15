@@ -1,9 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.ClothesStore" parent="Theme.Material3.DayNight">
+    <style name="Base.Theme.SportStore" parent="Theme.Material3.DayNight">
         <!-- Customize your light theme here. -->
          <item name="colorPrimary">@color/fluorescent_yellow</item>
     </style>
 
-    <style name="Theme.ClothesStore" parent="Base.Theme.ClothesStore" />
+    <style name="Theme.SportStore" parent="Base.Theme.SportStore" />
 </resources>
