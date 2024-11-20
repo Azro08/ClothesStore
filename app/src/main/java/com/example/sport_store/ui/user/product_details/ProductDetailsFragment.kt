@@ -50,6 +50,7 @@ class ProductDetailsFragment : DialogFragment() {
     }
 
     private fun addToCart(productId: Int) {
+        Toast.makeText(requireContext(),"Add to cart.....",Toast.LENGTH_SHORT).show()
         lifecycleScope.launch {
             viewModel.addToCart(productId)
             viewModel.addedToCart.collect {
@@ -58,7 +59,6 @@ class ProductDetailsFragment : DialogFragment() {
                     "Added to cart",
                     Toast.LENGTH_SHORT
                 ).show()
-                else Toast.makeText(requireContext(), it ?: "Failed", Toast.LENGTH_SHORT).show()
             }
         }
     }

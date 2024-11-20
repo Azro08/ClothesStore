@@ -7,6 +7,7 @@ import com.bumptech.glide.Glide
 import com.example.sport_store.R
 import com.example.sport_store.data.model.Cart
 import com.example.sport_store.databinding.CartItemBinding
+import com.example.sport_store.util.Constants
 
 class CartRvAdapter(
     private val cartList: List<Cart>,
@@ -23,7 +24,8 @@ class CartRvAdapter(
             val priceString = String.format("%.2f", curCartItem.product.price)
             val priceTag = "$priceString$"
             binding.textViewCartProductPrice.text = priceTag
-            Glide.with(binding.root).load(curCartItem.product.image)
+            val imageUrl = Constants.BASE_IMAGE_URL + curCartItem.product.image
+            Glide.with(binding.root).load(imageUrl)
                 .error(R.drawable.app_logo)
                 .into(binding.imageViewCarProductImg)
             cartItem = curCartItem
